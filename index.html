@@ -38,8 +38,14 @@
                 <input type="text" class="form-control txtPrice d-inline-block">
             </div>
             <div class="form-group">
-                <span class="d-inline-block">Description</span>
-                <input type="text" class="form-control txtDescription d-inline-block">
+                <span class="d-inline-block">Category</span>
+                <select name="category" class="form-control txtDescription d-inline-block">
+                    <option value="-1">Please select a category?</option>
+                    <option value="Category1">Category1</option>
+                    <option value="Category2">Category2</option>
+                    <option value="Category3">Category3</option>
+                    <opiton value="Category4">Category4</opiton>
+                </select>
             </div>
             <div class="form-group">
                 <button class="btn btn-success p-3 w-25" id="btnAdd">Add</button>
@@ -60,7 +66,10 @@
                     <th>#</th>
                     <th>Product Name</th>
                     <th>Price</th>
-                    <th>Description</th>
+                    <th>Category</th>
+                    <!--
+                    <th>Delete</th>
+                    -->
                 </tr>
             </thead>
             <tbody class="tableContent">

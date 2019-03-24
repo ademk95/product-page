@@ -1,53 +1,85 @@
 var sayac = 0;
 
 var btnAdd = document.querySelector('#btnAdd');
+
 btnAdd.addEventListener('click', function () {
 
     var productName = document.querySelector('.txtProduct').value;
     var price = document.querySelector('.txtPrice').value;
     var description = document.querySelector('.txtDescription').value;
+
     console.log(productName);
     console.log(price);
     console.log(description);
-    
-    /*Table*/
 
-    var txtproductName = document.createTextNode(productName);
-    var txtprice = document.createTextNode(price);
-    var txtdescription = document.createTextNode(description);
-    
-    /*id Register*/
-    var todoList = document.querySelector(".tableContent");
-    var parentTr = todoList.childNodes;
-    var trSayac = parentTr.length;
-    localStorage["storageIdReg"]=trSayac;
-    
-    
-    var tableContent = document.querySelector('.tableContent');
-    var tr = document.createElement('tr');
+    if (description == "-1" || description == "") {
 
-    var td = document.createElement('td');
-    var txtSayac = document.createTextNode(trSayac);
-    td.appendChild(txtSayac);
-    tr.appendChild(td);
+        alert("Please select a category ! ");
 
-    var td = document.createElement('td');
-    td.appendChild(txtproductName);
-    tr.appendChild(td);
+    } else {
 
-    var td = document.createElement('td');
-    td.appendChild(txtprice);
-    tr.appendChild(td);
 
-    var td = document.createElement('td');
-    td.appendChild(txtdescription);
-    tr.appendChild(td);
+        /*Table*/
 
-    tableContent.appendChild(tr);
+        var txtproductName = document.createTextNode(productName);
+        var txtprice = document.createTextNode(price);
+        var txtdescription = document.createTextNode(description);
 
-    saveList();
-    Reset();
+        /*id Register*/
+        var todoList = document.querySelector(".tableContent");
+        var parentTr = todoList.childNodes;
+        var trSayac = parentTr.length;
+        localStorage["storageIdReg"] = trSayac;
 
+
+        var tableContent = document.querySelector('.tableContent');
+        var tr = document.createElement('tr');
+
+        var td = document.createElement('td');
+        var txtSayac = document.createTextNode(trSayac);
+        td.appendChild(txtSayac);
+        tr.appendChild(td);
+
+        var td = document.createElement('td');
+        td.appendChild(txtproductName);
+        tr.appendChild(td);
+
+        var td = document.createElement('td');
+        td.appendChild(txtprice);
+        tr.appendChild(td);
+
+        var td = document.createElement('td');
+        td.appendChild(txtdescription);
+        tr.appendChild(td);
+        
+        tableContent.appendChild(tr);
+        
+        /*
+        var td = document.createElement('td');
+        var span=document.createElement('span');
+        var deleteSpan=document.createTextNode('x');
+        span.appendChild(deleteSpan);
+        td.appendChild(span);
+        tr.appendChild(td);
+
+        tableContent.appendChild(tr);
+        
+        span.onclick=function(){
+            
+            console.log("span-test");
+            var parentTd=this.parentElement;
+            var parentTr=parentTd.parentElement;
+            console.log(parentTr);
+            parentTr.style.display='none';
+            saveList();
+            
+        }
+        */
+        
+
+        saveList();
+        Reset();
+    }
 
 });
 
@@ -68,10 +100,10 @@ var arrayId = [];
 var arrayProduct = [];
 var arrayPrice = [];
 var arrayDescription = [];
-var start=0;
+var start = 0;
 
 function saveList() {
-    
+
     var todoList = document.querySelector(".tableContent");
     var parentTr = todoList.childNodes;
     console.log(parentTr);
@@ -79,8 +111,8 @@ function saveList() {
     start++;
     console.log(trSayac);
 
-    
-    
+
+
 
     for (var i = start; i < trSayac; i++) {
         var oluyo = parentTr[i].childNodes[0].innerHTML;
@@ -99,7 +131,7 @@ function saveList() {
         var oluyo = parentTr[i].childNodes[3].innerHTML;
         arrayDescription.push(oluyo);
     }
-    
+
     console.log(arrayId);
 
 
