@@ -115,21 +115,21 @@ function saveList() {
 
 
     for (var i = start; i < trSayac; i++) {
-        var oluyo = parentTr[i].childNodes[0].innerHTML;
-        arrayId.push(oluyo);
+        var tdValue = parentTr[i].childNodes[0].innerHTML;
+        arrayId.push(tdValue);
         console.log(arrayId);
     }
     for (var i = start; i < trSayac; i++) {
-        var oluyo = parentTr[i].childNodes[1].innerHTML;
-        arrayProduct.push(oluyo);
+        var tdValue = parentTr[i].childNodes[1].innerHTML;
+        arrayProduct.push(tdValue);
     }
     for (var i = start; i < trSayac; i++) {
-        var oluyo = parentTr[i].childNodes[2].innerHTML;
-        arrayPrice.push(oluyo);
+        var tdValue = parentTr[i].childNodes[2].innerHTML;
+        arrayPrice.push(tdValue);
     }
     for (var i = start; i < trSayac; i++) {
-        var oluyo = parentTr[i].childNodes[3].innerHTML;
-        arrayDescription.push(oluyo);
+        var tdValue = parentTr[i].childNodes[3].innerHTML;
+        arrayDescription.push(tdValue);
     }
 
     console.log(arrayId);
